@@ -4,7 +4,7 @@
   * fetching new from newsapi
   */
 export function getNews() {
-  return dispatch => { fetch(`https://newsapi.org/v2/everything?q=bitcoin&from=2018-11-04&sortBy=publishedAt&apiKey=4c04198ad5c9456f96a48b03b8162c30`, {
+  return dispatch => { fetch(`https://newsapi.org/v2/everything?q=bitcoin&from=2018-11-05&sortBy=publishedAt&apiKey=bbd9e904c0334f7ea6efce93d63beed7`, {
       method: 'GET',
   })
   .then((res) => {
