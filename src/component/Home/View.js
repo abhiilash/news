@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, ListView } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ListView, Linking, TouchableOpacity } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-material-cards'
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -34,7 +34,7 @@ export default class Home extends React.Component {
 
   renderNews(rowData){
     return(
-      <View>
+      <TouchableOpacity onPress={()=> Linking.openURL(rowData.url)}>
         <Card>
           <CardImage 
             source={{uri: rowData.urlToImage ? rowData.urlToImage : 'http://www.gaby-moreno.com/administrator/public_html/images/no-image.gif'}} 
@@ -46,7 +46,7 @@ export default class Home extends React.Component {
            />
            <CardContent text={rowData.content ? rowData.content : ''}/>
          </Card>
-      </View>
+      </TouchableOpacity>
     )
   }
 
